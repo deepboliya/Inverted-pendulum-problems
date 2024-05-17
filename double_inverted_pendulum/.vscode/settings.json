@@ -1,0 +1,26 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/parthgoel/ros2_ws/install/zed_interfaces/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/single_inverted",
+        "/home/parthgoel/ros2_ws/install/single_inverted/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/parth",
+        "/home/parthgoel/ros2_ws/install/parth/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/install/eufs_msgs/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/install/custom_msgs/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/bag_recorder_nodes_py",
+        "/home/parthgoel/ros2_ws/install/bag_recorder_nodes_py/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/parthgoel/ros2_ws/install/zed_interfaces/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/single_inverted",
+        "/home/parthgoel/ros2_ws/install/single_inverted/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/parth",
+        "/home/parthgoel/ros2_ws/install/parth/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/install/eufs_msgs/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/install/custom_msgs/lib/python3.8/site-packages",
+        "/home/parthgoel/ros2_ws/build/bag_recorder_nodes_py",
+        "/home/parthgoel/ros2_ws/install/bag_recorder_nodes_py/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ]
+}
