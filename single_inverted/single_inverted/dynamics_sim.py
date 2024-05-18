@@ -152,7 +152,7 @@ class single_inverted_pendulum(Node):
         self.obj_id += 1
 
     def update_input_torque(self, msg):
-        self.torque_value = msg.torque_value
+        self.torque_value = max(-5,min(5,msg.torque_value))
         return
     
 
