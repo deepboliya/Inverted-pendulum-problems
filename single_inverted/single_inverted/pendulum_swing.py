@@ -49,6 +49,10 @@ class pendulum_swing(Node):
         d = self.Kd * (error - self.previous_error)/dt
         self.previous_error = error
         t.torque_value = (p + i + d)
+        if t.torque_value>5:
+            t.torque_value = 5.0
+        if t.torque_value<-5:
+            t.torque_value = -5.0
         self.publisher.publish(t)
         self.get_logger().info("theta: "+ str(self.theta))
         #self.get_logger().info("theta_dot: "+ str(self.theta_dot))
