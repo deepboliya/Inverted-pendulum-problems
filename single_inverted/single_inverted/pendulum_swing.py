@@ -25,7 +25,7 @@ class pendulum_swing(Node):
 
         self.Kp= 50
         self.Ki = 0
-        self.Kd = 0.6
+        self.Kd = 6
 
         self.theta_values = []
         self.time_values = []
@@ -42,7 +42,7 @@ class pendulum_swing(Node):
             error = -(np.pi + self.theta)
 
         p = self.Kp * error
-        dt = 1/500
+        dt = time.time() - self.t_prev
         self.t_prev = time.time()
         self.integral += error* dt
         i = self.Ki * self.integral
