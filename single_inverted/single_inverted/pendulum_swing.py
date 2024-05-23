@@ -31,59 +31,40 @@ class pendulum_swing(Node):
         self.time_values = []
 
         self.swing_up_threshold = 0.125
-        self.energy_target = 8.5  # Adjust this based on your system parameters
+        self.energy_target = 8.5  
+        self.swing_up_completed = False
 
 
     def callback1(self,msg:States):
         self.theta = msg.theta
         self.theta_dot = msg.theta_dot
         t = TorqueInput()
-        if self.theta > 0:
-            if -self.theta + np.pi > self.swing_up_threshold:
-                t.torque_value = 5.0
-                self.publisher.publish(t)
-            else:
-                if self.theta>=0:
-                    error = (np.pi - self.theta)
-                if self.theta<0:
-                    error = -(np.pi + self.theta)
+        if self.swing_up_completed == False:
+            if abs(self.theta - np.pi) > self.swing_up_threshold:
+                # Swing-up controller
+                desired_energy = self.energy_target
+                current_energy = 0.5 * self.theta_dot**2 - 4.9*np.cos(self.theta)
+                energy_error = desired_energy - current_energy
 
-                p = self.Kp * error
-                dt = time.time() - self.t_prev
-                self.t_prev = time.time()
-                self.integral += error* dt
-                i = self.Ki * self.integral
-                d = self.Kd * (error - self.previous_error)/dt
-                self.previous_error = error
-                t.torque_value = (p + i + d)
-                if t.torque_value>5:
-                    t.torque_value = 5.0
-                if t.torque_value<-5:
-                    t.torque_value = -5.0
-                self.publisher.publish(t)
-        else :
-            if -(np.pi + self.theta) > self.swing_up_threshold:
-                t.torque_value = -5.0
-                self.publisher.publish(t)
-            else:
-                if self.theta>=0:
-                    error = (np.pi - self.theta)
-                if self.theta<0:
-                    error = -(np.pi + self.theta)
+                # Proportional control on energy error
+                k_energy = 50
+                t.torque_value = k_energy * energy_error
+            self.swing_up_completed = True
 
-                p = self.Kp * error
-                dt = time.time() - self.t_prev
-                self.t_prev = time.time()
-                self.integral += error* dt
-                i = self.Ki * self.integral
-                d = self.Kd * (error - self.previous_error)/dt
-                self.previous_error = error
-                t.torque_value = (p + i + d)
-                if t.torque_value>5:
-                    t.torque_value = 5.0
-                if t.torque_value<-5:
-                    t.torque_value = -5.0
-                self.publisher.publish(t)
+        # PID controller for stabilization
+        error = (np.pi - self.theta) if self.theta >= 0 else -(np.pi + self.theta)
+        p = self.Kp * error
+        dt = time.time() - self.t_prev
+        self.t_prev = time.time()
+        self.integral += error * dt
+        i = self.Ki * self.integral
+        d = self.Kd * (error - self.previous_error) / dt
+        self.previous_error = error
+        t.torque_value = p + i + d
+
+        # Clip the torque to the maximum allowed value
+        t.torque_value = max(min(t.torque_value, 5.0), -5.0)
+        self.publisher.publish(t)
 
 
 def main(args=None):
