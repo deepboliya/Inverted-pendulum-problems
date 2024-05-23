@@ -21,6 +21,8 @@ class pendulum_swing(Node):
         self.t_prev = time.time() - 0.0001
         self.integral = 0
         self.previous_error = self.setpoint - self.theta
+        self.previous_theta = 0
+        self.torque_prev = 5.0
 
 
         self.Kp= 50
@@ -30,8 +32,6 @@ class pendulum_swing(Node):
         self.theta_values = []
         self.time_values = []
 
-        self.swing_up_threshold = 0.125
-        self.energy_target = 8.5  
         self.swing_up_completed = False
 
 
@@ -39,17 +39,16 @@ class pendulum_swing(Node):
         self.theta = msg.theta
         self.theta_dot = msg.theta_dot
         t = TorqueInput()
-        if self.swing_up_completed == False:
-            if abs(self.theta - np.pi) > self.swing_up_threshold:
-                # Swing-up controller
-                desired_energy = self.energy_target
-                current_energy = 0.5 * self.theta_dot**2 - 4.9*np.cos(self.theta)
-                energy_error = desired_energy - current_energy
-
-                # Proportional control on energy error
-                k_energy = 50
-                t.torque_value = k_energy * energy_error
-            self.swing_up_completed = True
+        if not self.swing_up_completed:
+            if abs(self.theta) < 2*np.pi/3:
+                if abs(self.theta - self.previous_theta) > 0.1:
+                    t.torque_value =0.0
+                if abs(self.theta - self.previous_theta) < 0.001:
+                    self.torque_prev *= -1
+                    t.torque_value = self.previous_theta
+            if abs(self.theta)>2*np.pi/3:
+                self.swing_up_completed = True
+            
 
         # PID controller for stabilization
         error = (np.pi - self.theta) if self.theta >= 0 else -(np.pi + self.theta)
