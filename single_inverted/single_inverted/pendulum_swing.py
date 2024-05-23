@@ -30,54 +30,68 @@ class pendulum_swing(Node):
         self.theta_values = []
         self.time_values = []
 
+        self.swing_up_threshold = 0.125
+        self.energy_target = 8.5  # Adjust this based on your system parameters
+
 
     def callback1(self,msg:States):
         self.theta = msg.theta
         self.theta_dot = msg.theta_dot
-
         t = TorqueInput()
-        if self.theta>=0:
-            error = (np.pi - self.theta)
-        if self.theta<0:
-            error = -(np.pi + self.theta)
+        if self.theta > 0:
+            if -self.theta + np.pi > self.swing_up_threshold:
+                t.torque_value = 5.0
+                self.publisher.publish(t)
+            else:
+                if self.theta>=0:
+                    error = (np.pi - self.theta)
+                if self.theta<0:
+                    error = -(np.pi + self.theta)
 
-        p = self.Kp * error
-        dt = time.time() - self.t_prev
-        self.t_prev = time.time()
-        self.integral += error* dt
-        i = self.Ki * self.integral
-        d = self.Kd * (error - self.previous_error)/dt
-        self.previous_error = error
-        t.torque_value = (p + i + d)
-        if t.torque_value>5:
-            t.torque_value = 5.0
-        if t.torque_value<-5:
-            t.torque_value = -5.0
-        self.publisher.publish(t)
-        self.get_logger().info("theta: "+ str(self.theta))
-        #self.get_logger().info("theta_dot: "+ str(self.theta_dot))
-        self.theta_values.append(self.theta)
-        self.time_values.append(time.time() - self.t_start)
+                p = self.Kp * error
+                dt = time.time() - self.t_prev
+                self.t_prev = time.time()
+                self.integral += error* dt
+                i = self.Ki * self.integral
+                d = self.Kd * (error - self.previous_error)/dt
+                self.previous_error = error
+                t.torque_value = (p + i + d)
+                if t.torque_value>5:
+                    t.torque_value = 5.0
+                if t.torque_value<-5:
+                    t.torque_value = -5.0
+                self.publisher.publish(t)
+        else :
+            if -(np.pi + self.theta) > self.swing_up_threshold:
+                t.torque_value = -5.0
+                self.publisher.publish(t)
+            else:
+                if self.theta>=0:
+                    error = (np.pi - self.theta)
+                if self.theta<0:
+                    error = -(np.pi + self.theta)
 
-    def plot_theta_vs_time(self):
-        plt.plot(self.time_values, self.theta_values)
-        plt.xlabel('Time (s)')
-        plt.ylabel('Theta (rad)')
-        plt.title('Theta vs Time')
-        plt.grid(True)
-        plt.show()
+                p = self.Kp * error
+                dt = time.time() - self.t_prev
+                self.t_prev = time.time()
+                self.integral += error* dt
+                i = self.Ki * self.integral
+                d = self.Kd * (error - self.previous_error)/dt
+                self.previous_error = error
+                t.torque_value = (p + i + d)
+                if t.torque_value>5:
+                    t.torque_value = 5.0
+                if t.torque_value<-5:
+                    t.torque_value = -5.0
+                self.publisher.publish(t)
+
 
 def main(args=None):
     rclpy.init(args=args)
     node = pendulum_swing()
-    try:
-        rclpy.spin(node)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        node.plot_theta_vs_time()
-        node.destroy_node()
-        rclpy.shutdown()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
