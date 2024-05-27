@@ -23,16 +23,18 @@ def generate_launch_description():
     )
 
     interface = Node(
-        package = 'interface',
+        package = 'single_inverted',
         executable = 'interface'
     )
 
     balance = Node(
-        package = 'balance',
+        package = 'single_inverted',
         executable = 'balancer'
     )
+
     return LaunchDescription([
         visualizer,
         dynamics,
-        balance
+        interface,
+        #balance,
     ])
