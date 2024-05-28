@@ -19,7 +19,7 @@ def generate_launch_description():
 
     dynamics = Node(
         package = 'single_inverted',
-        executable = 'dynamics_sim',
+        executable = 'dynamics_sim'
     )
 
     interface = Node(
@@ -32,9 +32,15 @@ def generate_launch_description():
         executable = 'balancer'
     )
 
+    swingup = Node(
+        package = 'single_inverted',
+        executable = 'swingup'
+    )
+    
     return LaunchDescription([
         visualizer,
         dynamics,
-        interface,
+        #interface,
         #balance,
+        swingup
     ])
