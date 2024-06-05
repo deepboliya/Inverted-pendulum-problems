@@ -27,17 +27,14 @@ class ControllerNode(Node):
         self.theta_values = []
         self.time_values = []
 
-        self.start_time = time.time()
-        self.prev_time = self.start_time
+        self.node_start_time = time.time()
+        self.prev_time = time.time()
         self.previous_error = self.target_angle - self.theta
         self.integral = 0
 
         self.get_logger().info("Controller node has been started")
 
-        #Inititalize lists to store theta and time values
         
-
-
     def pose_callback(self, msg: States):
         #self.get_logger().info("Received state: " + str(msg.theta) + ", " + str(msg.theta_dot))
         self.theta = msg.theta
@@ -50,7 +47,7 @@ class ControllerNode(Node):
 
         self.PID(error)
         self.theta_values.append(self.theta) # append the theta value to the list
-        self.time_values.append(time.time() - self.start_time) # append the time value to the list
+        self.time_values.append(time.time() - self.node_start_time) # append the time value to the list
         
 
     def send_torque_info(self): # create a function that sends the torque value to the simulation
@@ -67,8 +64,8 @@ class ControllerNode(Node):
     def PID(self,error):
 
         # Set the PID gains
-        Kp = 48
-        Ki = 0.01
+        Kp = 50.0
+        Ki = 0.001
         Kd = 0.6
 
         # Compute the time difference
