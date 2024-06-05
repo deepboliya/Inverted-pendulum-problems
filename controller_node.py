@@ -30,7 +30,7 @@ class ControllerNode(Node):
         self.node_start_time = time.time()
         self.prev_time = time.time()
         self.previous_error = self.target_angle - self.theta
-        self.integral = 0
+        self.integral = 0.0
 
         self.get_logger().info("Controller node has been started")
 
