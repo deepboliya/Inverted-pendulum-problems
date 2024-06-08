@@ -40,6 +40,8 @@ class ControllerNode(Node):
         self.theta = msg.theta
         self.theta_dot = msg.theta_dot
 
+
+
         if self.theta < 0:
             error = -self.target_angle - self.theta
         if self.theta >= 0:
@@ -77,10 +79,10 @@ class ControllerNode(Node):
         self.previous_error = error
 
         p = Kp * error
-        i = Ki * self.integral
+        #i = Ki * self.integral
         d = Kd * derivative
 
-        self.torque = p + i + d
+        self.torque = p + d # calculate the torque value
         self.send_torque_info()
 
 
