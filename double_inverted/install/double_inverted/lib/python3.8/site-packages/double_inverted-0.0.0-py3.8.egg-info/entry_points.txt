@@ -1,0 +1,3 @@
+[console_scripts]
+dyanamics = double_inverted.double_inverted_dyanamics:main
+

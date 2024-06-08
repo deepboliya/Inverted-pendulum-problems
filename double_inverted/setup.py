@@ -2,7 +2,7 @@ from setuptools import setup
 import os
 from glob import glob
 
-package_name = 'single_inverted'
+package_name = 'double_inverted'
 
 setup(
     name=package_name,
@@ -19,17 +19,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='skully',
-    maintainer_email='boliyadeep2003@gmail.com',
+    maintainer='aryan',
+    maintainer_email='aryankay1234@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'dynamics_sim = single_inverted.dynamics_sim:main',
-            'balancer = single_inverted.Single_Inverted_Balance:main',
-            'interface = single_inverted.Single_Inverted_Interface:main',
-            'swingup = single_inverted.Single_Inverted_SwingUp:main'
+        	'dyanamics = double_inverted.double_inverted_dyanamics:main'
         ],
     },
 )
