@@ -22,6 +22,9 @@ def generate_launch_description():
         executable = 'dynamics_sim'
     )
 
+    
+        
+
     return LaunchDescription([
         visualizer,
         dynamics

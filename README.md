@@ -8,10 +8,14 @@
 #### 1) Single Inverted Pendulum
 - **Interface** - Crete a new node which subscribes to state feedback and publishes to torque input. Give torque and check if the pendulum is behaving appropriately (You can add this node to the launch file later)
 - **Balance** [Initial state - near upright] Write a controller to balance the inverted pendulum with initial state near upright position and not exactly upright
+- **Balance initial condition** - Needs to changed manually in single_inverted/single_inverted/dynamics_sim.py
+ ![Output sample](illustrations/balance_initial_conditions.jpg)
 - **Swing-up** [Initial state - downward point at stable equilibrium] Write a controller to first swing up the pendulum, then balance on top.
+- **Swing-up initial condition** - Needs to changed manually in single_inverted/single_inverted/dynamics_sim.py
+ ![Output sample](illustrations/swing_initial_conditions.jpg)
 
 #### 2) Double Inverted Pendulum
-- Create a new pacakge with dynamics of an double inverted pendulum
+- Create a new package with dynamics of an double inverted pendulum
 
 ## How-to
 1. Clone this repository in /src folder of your ros2 workspace
