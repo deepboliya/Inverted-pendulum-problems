@@ -25,17 +25,4 @@ This repository contains solutions to various inverted pendulum problems. Below 
 ### Performance Graph
 ![Graph: Swing Up](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/24006527-40cf-475a-bc8a-4237c8220786)
 
-## Getting Started
 
-To run these simulations, clone this repository and follow the instructions provided in the respective folders.
-
-### Prerequisites
-
-- Python 3.x
-- [Other dependencies]
-
-### Installation
-
-```bash
-git clone https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav.git
-cd Inverted-pendulum-problems-Atharav
