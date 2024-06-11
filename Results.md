@@ -5,9 +5,10 @@ This repository contains solutions to various inverted pendulum problems. Below 
 ## 1. Balance
 
 ### Video Demonstration
-[![Balance](https://img.youtube.com/vi/9e45ce17-7df3-47fb-a1ae-0e2064d48eb7/0.jpg)](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/9e45ce17-7df3-47fb-a1ae-0e2064d48eb7)
 
-
+<video src="https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/9e45ce17-7df3-47fb-a1ae-0e2064d48eb7" controls="controls" style="max-width: 100%; height: auto;">
+    Your browser does not support the video tag.
+</video>
 
 ### Performance Graph
 ![Graph: Balance](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/cafd3725-003c-4873-a124-6810d496d66b)
@@ -15,7 +16,7 @@ This repository contains solutions to various inverted pendulum problems. Below 
 ## 2. Swing Up
 
 ### Video Demonstration
-[![Swing Up](https://img.youtube.com/vi/6b9a9d66-65b0-4451-b2da-1e59e2cfc1bd/0.jpg)](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/6b9a9d66-65b0-4451-b2da-1e59e2cfc1bd)
+
 
 <video src="https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/6b9a9d66-65b0-4451-b2da-1e59e2cfc1bd" controls="controls" style="max-width: 100%; height: auto;">
     Your browser does not support the video tag.
