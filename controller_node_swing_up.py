@@ -91,7 +91,7 @@ class ControllerNode(Node):
 
         # Set the PID gains
         Kp = 50.0
-        #Ki = 0.01
+        Ki = 0.01
         Kd = 6.0
 
         if self.theta < 0:

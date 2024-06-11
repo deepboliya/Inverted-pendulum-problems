@@ -68,7 +68,7 @@ class ControllerNode(Node):
         # Set the PID gains
         Kp = 50.0
         Ki = 0.001
-        Kd = 0.6
+        Kd = 6.0
 
         # Compute the time difference
         dt = time.time() - self.prev_time
@@ -79,10 +79,10 @@ class ControllerNode(Node):
         self.previous_error = error
 
         p = Kp * error
-        #i = Ki * self.integral
+        i = Ki * self.integral
         d = Kd * derivative
 
-        self.torque = p + d # calculate the torque value
+        self.torque = p + i + d # calculate the torque value
         self.send_torque_info()
 
 
