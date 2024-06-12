@@ -30,7 +30,6 @@ This repository contains solutions to the inverted pendulum problems.Each scenar
 
 # Double Pendulum
 
-<video src="https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/24b4e456-98b5-4f03-95af-e329b60c5233)" controls="controls" style="max-width: 100%; height: auto;">
-    Your browser does not support the video tag.
-</video>
+[double inverted pendulum.webm](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/1aea4261-4329-4b0c-b2e6-fa9eaaf0254e)
+
 
