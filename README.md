@@ -1,6 +1,6 @@
 # Inverted Pendulum Problems
 
-This repository contains solutions to various inverted pendulum problems. Below are two scenarios: Balancing and Swing Up. Each scenario includes a video demonstration and a corresponding performance graph.
+This repository contains solutions to the inverted pendulum problems.Each scenario includes a video demonstration and a corresponding performance graph.
 
 ## 1. Balance
 
