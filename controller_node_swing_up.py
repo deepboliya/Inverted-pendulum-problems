@@ -54,7 +54,7 @@ class ControllerNode(Node):
         
         if abs(self.theta) >= np.pi -0.4 :
             self.swing_up_complete = True
-            self.get_logger().info("Swing up complete")
+            self.get_logger().info("Swing up complete, now balancing the pendulum...")
 
         if self.swing_up_complete == True:
             self.PID_balance()
@@ -65,13 +65,15 @@ class ControllerNode(Node):
 
     def swing_up(self):
 
-        if abs(self.theta - self.previous_theta) >= 0.4:
+        if abs(self.theta - self.previous_theta) >= 0.6:
             self.torque = 0.0
 
         elif abs(self.theta) < np.pi / 1.5:
             if abs(self.theta - self.previous_theta) < 0.05:
                 self.previous_torque *= -1
                 self.torque = self.previous_torque
+        #else:
+            #self.torque = self.previous_torque
         
         self.send_torque_info()
         
@@ -91,7 +93,7 @@ class ControllerNode(Node):
 
         # Set the PID gains
         Kp = 50.0
-        Ki = 0.01
+        Ki = 0.001
         Kd = 6.0
 
         if self.theta < 0:
@@ -108,10 +110,10 @@ class ControllerNode(Node):
         self.previous_error = error
 
         p = Kp * error
-        #i = Ki * self.integral
+        i = Ki * self.integral
         d = Kd * derivative
 
-        self.torque = p + d 
+        self.torque = p + i + d 
         self.send_torque_info()
 
 
