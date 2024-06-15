@@ -22,7 +22,7 @@ class double_inverted_pendulum(Node):
     
     # You can use similar variations as the original code for initialization
 
-    '''
+    
     #theta is almost upright (randomized)
     theta1_0 = np.pi - (np.random.rand() - 0.5) / 2
     theta1_0 = (theta1_0 + np.pi)%(2*np.pi) - np.pi
@@ -32,7 +32,7 @@ class double_inverted_pendulum(Node):
 
     theta1_dot0 = 0
     theta2_dot0 = 0
-    '''
+    
     
     # Input/s
     torque_value = 0.0
