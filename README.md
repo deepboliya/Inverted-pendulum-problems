@@ -1,33 +1,35 @@
-# Inverted Pendulum
-#### Implementation of control laws on simulated inverted pendulum on ros2
+# Inverted Pendulum Problems
 
-![Output sample](illustrations/screen-capture.gif)
+This repository contains solutions to the inverted pendulum problems.Each scenario includes a video demonstration and a corresponding performance graph.
 
-## Exercises
-![Output sample](illustrations/diagram.gif)
-#### 1) Single Inverted Pendulum
-- **Interface** - Crete a new node which subscribes to state feedback and publishes to torque input. Give torque and check if the pendulum is behaving appropriately (You can add this node to the launch file later)
-- **Balance** [Initial state - near upright] Write a controller to balance the inverted pendulum with initial state near upright position and not exactly upright
-- **Swing-up** [Initial state - downward point at stable equilibrium] Write a controller to first swing up the pendulum, then balance on top.
+# Single Pendulum
 
-#### 2) Double Inverted Pendulum
-- Create a new pacakge with dynamics of an double inverted pendulum
+## 1. Balance
 
-## How-to
-1. Clone this repository in /src folder of your ros2 workspace
-2. Build and source the workspace. Navigate to your workspace directory and run
-```
-colcon build --symlink-install
-source install/setup.bash
-```
-3. You can now launch the simulation
-```
-ros2 launch single_inverted single_inverted_pendulum.launch.py
-```
-4. Create a seperate 'controller' node which uses feedback to determine the torque value to accomplish tasks
+### Video Demonstration
 
-5. Change the initial states by varying the values theta0 and theta_dot0 manually or by un-commenting relevant sections for random initializations
-6. Custom messages definitions are used for input and feedback 
+<video src="https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/9e45ce17-7df3-47fb-a1ae-0e2064d48eb7" controls="controls" style="max-width: 100%; height: auto;">
+    Your browser does not support the video tag.
+</video>
 
+### Performance Graph
+![Graph: Balance](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/cafd3725-003c-4873-a124-6810d496d66b)
+
+## 2. Swing Up
+
+### Video Demonstration
+
+
+<video src="https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/6b9a9d66-65b0-4451-b2da-1e59e2cfc1bd" controls="controls" style="max-width: 100%; height: auto;">
+    Your browser does not support the video tag.
+</video>
+
+### Performance Graph
+![Graph: Swing Up](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/24006527-40cf-475a-bc8a-4237c8220786)
+
+
+# Double Pendulum
+
+[double inverted pendulum.webm](https://github.com/Atharav1805/Inverted-pendulum-problems-Atharav/assets/168408064/1aea4261-4329-4b0c-b2e6-fa9eaaf0254e)
 
 
