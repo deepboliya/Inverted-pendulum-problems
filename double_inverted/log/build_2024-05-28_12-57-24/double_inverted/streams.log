@@ -1,0 +1,37 @@
+[0.345s] Invoking command in '/home/aryan/Inverted-pendulum-problems/double_inverted': PYTHONPATH=/home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/prefix_override:/home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/double_inverted build --build-base /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build install --record /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/install.log --single-version-externally-managed install_data
+[0.456s] running egg_info
+[0.456s] creating build/double_inverted/double_inverted.egg-info
+[0.456s] writing build/double_inverted/double_inverted.egg-info/PKG-INFO
+[0.456s] writing dependency_links to build/double_inverted/double_inverted.egg-info/dependency_links.txt
+[0.456s] writing entry points to build/double_inverted/double_inverted.egg-info/entry_points.txt
+[0.456s] writing requirements to build/double_inverted/double_inverted.egg-info/requires.txt
+[0.456s] writing top-level names to build/double_inverted/double_inverted.egg-info/top_level.txt
+[0.457s] writing manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+[0.475s] reading manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+[0.475s] writing manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+[0.475s] running build
+[0.475s] running build_py
+[0.475s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build
+[0.475s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib
+[0.475s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+[0.476s] copying double_inverted/double_inverted_dyanamics.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+[0.476s] copying double_inverted/__init__.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+[0.476s] running install
+[0.476s] running install_lib
+[0.476s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+[0.476s] copying /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted/double_inverted_dyanamics.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+[0.477s] copying /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted/__init__.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+[0.477s] byte-compiling /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted/double_inverted_dyanamics.py to double_inverted_dyanamics.cpython-38.pyc
+[0.478s] byte-compiling /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted/__init__.py to __init__.cpython-38.pyc
+[0.478s] running install_data
+[0.478s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index
+[0.478s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index
+[0.478s] creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index/packages
+[0.478s] copying resource/double_inverted -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index/packages
+[0.478s] copying package.xml -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/double_inverted
+[0.478s] running install_egg_info
+[0.479s] Copying build/double_inverted/double_inverted.egg-info to /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted-0.0.0-py3.8.egg-info
+[0.479s] running install_scripts
+[0.488s] Installing dyanamics script to /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/double_inverted
+[0.488s] writing list of installed files to '/home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/install.log'
+[0.499s] Invoked command in '/home/aryan/Inverted-pendulum-problems/double_inverted' returned '0': PYTHONPATH=/home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/prefix_override:/home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/double_inverted build --build-base /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build install --record /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/install.log --single-version-externally-managed install_data

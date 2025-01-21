@@ -1,0 +1,35 @@
+running egg_info
+creating build/double_inverted/double_inverted.egg-info
+writing build/double_inverted/double_inverted.egg-info/PKG-INFO
+writing dependency_links to build/double_inverted/double_inverted.egg-info/dependency_links.txt
+writing entry points to build/double_inverted/double_inverted.egg-info/entry_points.txt
+writing requirements to build/double_inverted/double_inverted.egg-info/requires.txt
+writing top-level names to build/double_inverted/double_inverted.egg-info/top_level.txt
+writing manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+reading manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+writing manifest file 'build/double_inverted/double_inverted.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+copying double_inverted/double_inverted_dyanamics.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+copying double_inverted/__init__.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted
+running install
+running install_lib
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+copying /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted/double_inverted_dyanamics.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+copying /home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/build/lib/double_inverted/__init__.py -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted
+byte-compiling /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted/double_inverted_dyanamics.py to double_inverted_dyanamics.cpython-38.pyc
+byte-compiling /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index
+creating /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index/packages
+copying resource/double_inverted -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/ament_index/resource_index/packages
+copying package.xml -> /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/share/double_inverted
+running install_egg_info
+Copying build/double_inverted/double_inverted.egg-info to /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/python3.8/site-packages/double_inverted-0.0.0-py3.8.egg-info
+running install_scripts
+Installing dyanamics script to /home/aryan/Inverted-pendulum-problems/double_inverted/install/double_inverted/lib/double_inverted
+writing list of installed files to '/home/aryan/Inverted-pendulum-problems/double_inverted/build/double_inverted/install.log'
