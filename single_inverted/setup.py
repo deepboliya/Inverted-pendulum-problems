@@ -26,7 +26,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'dynamics_sim = single_inverted.dynamics_sim:main'
+            'dynamics_sim = single_inverted.dynamics_sim:main',
+            "pendulum_interface=single_inverted.pendulum_interface:main",
+            "pendulum_balance=single_inverted.pendulum_balance:main",
+            "pendulum_swing=single_inverted.pendulum_swing:main"
         ],
     },
 )

@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/parthgoel/ros2_ws/install/zed_interfaces/include/**",
+        "/home/parthgoel/ros2_ws/install/eufs_msgs/include/**",
+        "/home/parthgoel/ros2_ws/install/custom_msgs/include/**",
+        "/opt/ros/galactic/include/**",
+        "/home/parthgoel/ros2_ws/src/parth_ros2/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-arm64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
